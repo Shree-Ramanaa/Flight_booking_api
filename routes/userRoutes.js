@@ -1,10 +1,10 @@
 import pkg from "express";
 
 //views
-import { BookTicket } from "../controllers/userViews/bookTickets.js";
-import { BookedFlights } from "../controllers/userViews/bookedFlights.js";
-import { searchFlights } from "../controllers/userViews/searchFlights.js";
-import { SignupView } from "../controllers/userViews/signup.js";
+import { BookTicket } from "../controllers/userControllers/bookTickets.js";
+import { BookedFlights } from "../controllers/userControllers/bookedFlights.js";
+import { searchFlights } from "../controllers/userControllers/searchFlights.js";
+import { SignupView } from "../controllers/userControllers/signup.js";
 
 //utils
 import { authenticateJwtToken } from "../utils/jwtUtils.js";
