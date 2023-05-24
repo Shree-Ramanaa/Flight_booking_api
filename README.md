@@ -11,10 +11,13 @@
         
         Path: https://flighbookingapi-sc07.onrender.com/login
         HTTP Method: GET
-        Req Body: email and password
+        Req Body: {
+                    email: {type: String, required: true},
+                    password:{type: String, required: true}
+                  }
         
     Signup :
-        Used by user to signup if they are not logged in yet.
+        Used by admin and user to signup if they are not logged in yet.
         
         Path: https://flighbookingapi-sc07.onrender.com/user/signup
         HTTP Method: POST
@@ -23,7 +26,12 @@
                     password:{type: String, required: true},
                     isAdmin: {type: Boolean, required: true},
                     bookedFlights: [{ type: mongoose.Types.ObjectId }],
-                 }
+                  }
+                  
+    AddFlights :
+        Used by admin to add flights with insight informations.
+        
+        Path: https://flighbookingapi-sc07.onrender.com/
         
         
     
