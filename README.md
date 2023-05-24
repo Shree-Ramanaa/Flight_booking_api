@@ -17,8 +17,13 @@
         Used by user to signup if they are not logged in yet.
         
         Path: https://flighbookingapi-sc07.onrender.com/user/signup
-        HTTP method: POST
-        Req Body: email and password
+        HTTP Method: POST
+        Req Body: {
+                    email: {type: String, required: true},
+                    password:{type: String, required: true},
+                    isAdmin: {type: Boolean, required: true},
+                    bookedFlights: [{ type: mongoose.Types.ObjectId }],
+                 }
         
         
     
