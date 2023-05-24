@@ -1,8 +1,8 @@
 import pkg from "express";
 //views
-import { AddFlights } from "../controllers/adminViews/addFlights.js";
-import { RemoveFlights } from "../controllers/adminViews/removeFlights.js";
-import { ViewBookings } from "../controllers/adminViews/viewBookings.js";
+import { AddFlights } from "../controllers/adminControllers/addFlights.js";
+import { RemoveFlights } from "../controllers/adminControllers/removeFlights.js";
+import { ViewBookings } from "../controllers/adminControllers/viewBookings.js";
 import { tryCatch } from "../utils/errorHandler.js";
 
 //jwt auth
