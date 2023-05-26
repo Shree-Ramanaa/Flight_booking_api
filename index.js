@@ -19,7 +19,7 @@ app.use(cors({ credentials: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
-// This was the Bug
+// This was the Bug. Since response is already sent here, other routes wasn't able to send the response.
 // app.use("",(req,res,next)=>{
 //   res.send("Welcome to Flight ticket booking API");
 //   next();
