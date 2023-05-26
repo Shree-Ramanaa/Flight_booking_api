@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { statusLog } from "../utils/logs.js";
+import { errorHnadler } from "../utils/errorHandler.js";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -12,6 +13,8 @@ export const mongooseConnection = () => {
     useUnifiedTopology: true,
     });
   }catch(err){
+    errorHandler(err);
+  }
     
   const db = mongoose.connection;
   db.on("error", console.error.bind(console, "connection error: "));
