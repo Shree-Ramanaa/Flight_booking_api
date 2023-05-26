@@ -5,10 +5,14 @@ dotenv.config();
 
 export const mongooseConnection = () => {
   const mongoUrl = process.env.MONGO_URL;
-  mongoose.connect(mongoUrl, {
+  
+  try{
+    mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  });
+    });
+  }catch(err){
+    
   const db = mongoose.connection;
   db.on("error", console.error.bind(console, "connection error: "));
   db.once("open", function () {
