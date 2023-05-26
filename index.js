@@ -18,10 +18,12 @@ const app = pkg();
 app.use(cors({ credentials: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
-app.use("",(req,res,next)=>{
-  res.send("Welcome to Flight ticket booking API");
-  next();
-});
+
+// This was the Bug
+// app.use("",(req,res,next)=>{
+//   res.send("Welcome to Flight ticket booking API");
+//   next();
+// });
 app.use("", routes);
 app.use(errorHandler);
 app.listen(process.env.PORT || 3000, () => {
