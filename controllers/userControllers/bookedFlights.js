@@ -3,7 +3,7 @@ import { userModel } from "../../schema/userModel.js";
 
 export const BookedFlights = (req, res) => {
   userModel
-    .findOne({ email: req.email })
+    .findOne({ email: req.body.email })
     .select("bookedFlights")
     .then((queryResult) => {
       flightModel
